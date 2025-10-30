@@ -1,0 +1,707 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap&family=BBH+Sans+Bogle&family=Bebas+Neue&family=Shadows+Into+Light&display=swap&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* --- RESET & ESTRUTURA GLOBAL --- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    background-color: rgb(9, 11, 12);
+    width: 100%;
+    min-height: 100dvh;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* --- HEADER --- */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.001);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    height: 7rem;
+    gap: 3rem;
+    z-index: 1200;
+    position: fixed;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    width: 10rem;
+    height: auto;
+    filter: drop-shadow(0 0 12px #00aaff);
+}
+
+.menu {
+    margin-right: 30px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 3rem;
+}
+
+.menu ul li a {
+    color: white;
+    font-family: "Roboto Flex", sans-serif;
+    padding: 8px 0;
+    position: relative;
+    transition: all 0.5s ease;
+    font-size: 1rem;
+    font-weight: 150;
+    display: inline-block;
+}
+
+.menu ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #00aaff;
+    transition: width 0.4s ease-in-out;
+}
+
+.menu ul li a:hover::after {
+    width: 100%;
+}
+
+.menu ul li a:hover {
+    transform: scale(1.1);
+}
+
+/* --- HERO SECTION --- */
+.hero-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../assets/imgs/Hero-img.jpeg');
+    /* REMOVEMOS background-attachment: fixed; PARA TIRAR O PARALLAX */
+    background-attachment: scroll; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+    /* Efeito de transição suave da imagem */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+}
+
+.hero-content-wrapper {
+    min-height: calc(100vh - 7rem); /* 100vh menos a altura do header fixo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 7rem; /* Espaçamento abaixo do header fixo */
+    padding-left: 10vw;
+    padding-right: 10vw;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 80px 0;
+}
+
+.hero-content h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.hero-content p {
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #DDDDDD;
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+}
+
+.hero-content p strong {
+    color: #00f0ff;
+    font-weight: 500;
+}
+
+/* Botão CTA Principal */
+.btn-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #000000;
+    background-color: #00f0ff;
+    border: 2px solid #00f0ff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.btn-hero-cta i {
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.btn-hero-cta:hover {
+    background-color: #00ffff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+}
+
+.btn-hero-cta:hover i {
+    transform: translateX(4px);
+}
+
+/* --- SEÇÃO SERVIÇOS --- */
+.servicos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 8rem 0;
+    padding: 0 5vw;
+}
+
+.servicos-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    max-width: 800px;
+}
+
+.servicos-header h2 {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.servicos-container {
+    /* Layout em Grid Responsivo para os cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.servico-card, .servico-card-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    height: 250px;
+    border-radius: 12px;
+    text-decoration: none;
+    /* Estilo Ghost Neon */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: #f0f0f0;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.05);
+}
+
+.servico-card:hover {
+    transform: translateY(-8px);
+    border-color: #00ffff;
+    background: rgba(0, 240, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+}
+
+.servico-card i {
+    font-size: 2.5rem;
+    color: #00f0ff;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px #00f0ff);
+}
+
+.servico-card h3 {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.servico-card p {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 100;
+    font-size: 0.95rem;
+    color: #AAAAAA;
+    line-height: 1.4;
+    max-width: 250px;
+}
+
+/* Card CTA (Chamada para Catálogo) */
+.servico-card-cta {
+    background-color: #00f0ff;
+    color: #000000;
+    justify-content: space-around;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    font-family: "Zalando Sans Expanded", sans-serif;
+}
+
+.servico-card-cta h3 {
+    font-size: 1.4rem;
+    color: #000000;
+    font-weight: 700;
+}
+
+.servico-card-cta p {
+    color: #333333;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.servico-card-cta i {
+    font-size: 2rem;
+    color: #000000;
+    margin-top: 2px;
+    filter: none;
+    transition: transform 0.3s;
+}
+
+.servico-card-cta:hover {
+    background-color: #00ffff;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 40px rgba(0, 255, 255, 0.8);
+}
+
+.servico-card-cta:hover i {
+    transform: translateX(8px);
+}
+
+/* --- SEÇÃO PORTFÓLIO (TRABALHOS FEITOS) --- */
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 8rem 0;
+    padding: 0 5vw;
+}
+
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    max-width: 800px;
+}
+
+.portfolio-header h2 {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.portfolio-header p {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #AAAAAA;
+}
+
+.projects-grid {
+    /* Grid Responsivo: 3 colunas em desktop, adapta em mobile */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 12px;
+    
+    /* Estilo Minimalista/Ghost */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+    
+    transition: all 0.4s ease;
+}
+
+/* Efeito Interativo (Hover) */
+.project-card:hover {
+    transform: translateY(-10px); /* Elevação sutil */
+    border-color: #00ffff;
+    background: rgba(0, 240, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2); /* Brilho neon */
+}
+
+.project-image-container {
+    height: 200px; /* Altura fixa para as imagens */
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o container */
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05); /* Zoom sutil na imagem no hover */
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 200;
+    font-size: 0.95rem;
+    color: #AAAAAA;
+    margin-bottom: 15px;
+}
+
+.project-cta {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    color: #00f0ff; /* Cor Neon para o CTA */
+    transition: color 0.3s ease;
+}
+
+.project-cta i {
+    margin-left: 8px;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-cta {
+    color: #00ffff;
+}
+
+.project-card:hover .project-cta i {
+    transform: translateX(4px);
+}
+
+/* --- FOOTER (RODAPÉ) OTIMIZADO --- */
+footer {
+    background-color: transparent; 
+    width: 100%;
+    padding: 60px 5vw 20px; /* Mais padding no topo, menos embaixo */
+    font-family: 'Roboto Flex', sans-serif;
+    color: #DDDDDD;
+    font-weight: 200;
+}
+
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.footer-title {
+    color: #00f0ff; /* Cor Neon para o Título */
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #AAAAAA;
+}
+
+.redes-sociais-icones {
+    display: flex;
+    gap: 12px;
+    padding-top: 15px;
+}
+
+.icone-link {
+    color: #f0f0f0; 
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.151);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efeitos de Hover Neon */
+.icone-link:hover {
+    color: #00f0ff;
+    background-color: rgba(0, 238, 255, 0.11);
+    border-color: #00f0ff;
+    transform: translateY(-2px);
+}
+
+.icone-link.whatsapp:hover {
+    color: #25D366; /* Cor do WhatsApp */
+    border-color: #25D366;
+    box-shadow: 0 0 6px #25D366;
+}
+
+.icone-link.facebook:hover {
+    color: #1877F2; /* Cor do Facebook */
+    border-color: #1877F2;
+    box-shadow: 0 0 6px #1877F2;
+}
+
+.icone-link.instagram:hover {
+    color: #E1306C; /* Cor do Instagram */
+    border-color: #E1306C;
+    box-shadow: 0 0 6px #E1306C;
+}
+
+/* Copyright Bar */
+.footer-copyright {
+    width: 100%;
+    padding: 15px 5vw;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+.footer-copyright p {
+    margin: 0;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* ========================================= */
+/* --- MEDIA QUERIES (RESPONSIVIDADE) --- */
+/* ========================================= */
+
+/* Tablet e Desktops Menores (Max-width: 1024px) */
+@media (max-width: 1024px) {
+    /* HEADER */
+    header {
+        height: 5.5rem;
+    }
+
+    .logo {
+        width: 7.5rem;
+    }
+
+    .menu ul {
+        gap: 1.5rem;
+    }
+
+    /* HERO */
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Tablet Vertical e Mobile Grande (Max-width: 768px) */
+@media (max-width: 768px) {
+    /* HEADER */
+    header {
+        height: 15%;
+        padding: 10px 10px 5px 10px;
+        gap: 0.3rem;
+    }
+
+    .logo {
+        width: 6.5rem;
+    }
+
+    .menu {
+        margin-right: 0;
+    }
+
+    .menu ul {
+        gap: 0.8rem;
+        padding: 0 10px 5px 10px;
+    }
+    
+    /* HERO */
+    .hero-visual{
+        background-position: 70% center;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    
+    .hero-content-wrapper {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-top: 5.5rem; 
+        min-height: calc(100vh - 5.5rem);
+    }
+    
+    /* SERVIÇOS */
+    .servicos-header {
+        margin-bottom: 3rem;
+    }
+    
+    .servicos-header h2 {
+        font-size: 2rem;
+    }
+    
+    .servicos-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .servico-card, .servico-card-cta {
+        height: auto;
+        min-height: 180px;
+        padding: 20px;
+    }
+    
+    .servico-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .servico-card p {
+        font-size: 0.9rem;
+    }
+    
+    .servico-card-cta h3 {
+        font-size: 1.4rem;
+    }
+
+    /* PORTFÓLIO */
+    .portfolio {
+        margin: 5rem 0; /* Menos margem vertical no mobile */
+    }
+
+    .portfolio-header h2 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Uma coluna no mobile */
+        gap: 1.5rem;
+    }
+
+    .project-image-container {
+        height: 150px; /* Altura menor para imagens no mobile */
+    }
+
+    .project-info h3 {
+        font-size: 1.2rem;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 40px 5vw 15px;
+    }
+    
+    .footer-main {
+        text-align: center; /* Centraliza o conteúdo no mobile */
+        padding-bottom: 30px;
+        padding-left: 0; /* Remove o padding esquerdo no mobile */
+    }
+    
+    .footer-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+    
+    .redes-sociais-icones {
+        justify-content: center; /* Centraliza os ícones no mobile */
+    }
+}
+/* Mobile Pequeno (Max-width: 480px) */
+@media (max-width: 480px) {
+    /* HERO */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+.servico-card:hover, 
+.servico-card-cta:hover,
+.project-card:hover,
+.btn-hero-cta:hover,
+.icone-link:hover {
+    transition: all 0.4s ease !important; 
+    transform: none; 
+}
+
+.servico-card:hover {
+    transform: translateY(-8px) !important;
+}
+.servico-card-cta:hover {
+    transform: translateY(-8px) !important;
+}
+.project-card:hover {
+    transform: translateY(-10px) !important;
+}
+.btn-hero-cta:hover {
+    transform: translateY(-2px) !important;
+}
+.icone-link:hover {
+    transform: translateY(-2px) scale(1.05) !important; 
+}
+
+.servico-card-cta:hover i {
+    transform: translateX(8px) !important; 
+}
+.project-card:hover .project-cta i {
+    transform: translateX(4px) !important; 
+}
