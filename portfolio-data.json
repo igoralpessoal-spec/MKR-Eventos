@@ -1,0 +1,44 @@
+[
+    {
+        "id": 2,
+        "titulo": "Chá de Bebê RAVI",
+        "descricao": "Chá de Bebê Temático, Storymaker, Videomaker e Fotografia.",
+        "imagem": "assets/imgs/case-cha-ravi.jpeg",
+        "link": "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTUzODU4OTQwOTkwOTcx?story_media_id=3701584787085288056&igsh=MXQ4eHhoNDI3bWRlcA=="
+    },
+    {
+        "id": 3,
+        "titulo": "Chá Revelação Alice",
+        "descricao": "Revelação da Alice, Storymaker, Videomaker e Fotografia.",
+        "imagem": "assets/imgs/case-cha-alice.jpg",
+        "link": "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDUwNDkyODgyNDM4ODQ0?story_media_id=3680225778383250639&igsh=aWdmMzZyZ3YyZDdx"
+    },
+    {
+        "id": 4,
+        "titulo": "Aniversário ENRICO (1 ano)",
+        "descricao": "Produção de Festa de 1 Ano, Storymaker, Videomaker e Fotografia.",
+        "imagem": "assets/imgs/case-aniversario-enrico.jpg",
+        "link": "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDgyMjUzMDQyNTA1ODk3?story_media_id=3736466494252242284&igsh=MTRkcmI3ZDd0bW9nMA=="
+    },
+    {
+        "id": 5,
+        "titulo": "Evento Corporativo LGE",
+        "descricao": "Evento/Curso, Storymaker, Videomaker e Fotografia.",
+        "imagem": "assets/imgs/case-corporativo-LGE.jpg",
+        "link": "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MjkwNjUxMjg0Mjc5NTc5?story_media_id=3752156727153405861&igsh=Mmp1eWhvN2Y3MDBv"
+    },
+    {
+        "id": 6,
+        "titulo": "Casamento B & Y",
+        "descricao": "Casamento com Produção, Storymaker, Videomaker e Fotografia.",
+        "imagem": "assets/imgs/case-casamento-BY.jpg",
+        "link": "https://www.instagram.com/stories/highlights/18072365471466558/"
+    },
+    {
+        "id": 7,
+        "titulo": "Show BLOKINHO",
+        "descricao": "Mega Produção de Show/Evento, Storymaker, Videomaker e Fotografia.",
+        "imagem": "assets/imgs/case-show-blokinho.jpg",
+        "link": "https://www.instagram.com/stories/highlights/18125036824495948/"
+    }
+]
