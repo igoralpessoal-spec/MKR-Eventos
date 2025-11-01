@@ -92,7 +92,6 @@ header {
     width: 100%;
     height: 100vh;
     background-image: url('../assets/imgs/Hero-img.jpeg');
-    /* REMOVEMOS background-attachment: fixed; PARA TIRAR O PARALLAX */
     background-attachment: scroll; 
     background-position: center center;
     background-repeat: no-repeat;
@@ -173,7 +172,7 @@ header {
 
 .btn-hero-cta:hover {
     background-color: #00ffff;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
 }
 
@@ -304,6 +303,129 @@ header {
     transform: translateX(8px);
 }
 
+/* --- SEÇÃO FILME --- */
+.filme-sonho {
+    position: relative;
+    width: 100%;
+    background-color:rgb(9, 11, 12);
+    padding: 8rem 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.filme-sonho::before,
+.filme-sonho::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 180px; /* altura do fade */
+    z-index: 3;
+    pointer-events: none;
+}
+
+.filme-sonho::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgb(9, 11, 12) 0%, rgba(0,0,0,0) 100%);
+}
+
+.filme-sonho::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgb(9, 11, 12) 0%, rgba(0,0,0,0) 100%);
+}
+
+
+.filme-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 80%, rgba(0, 240, 255, 0.08), rgb(9, 11, 12));
+    z-index: 1;
+}
+
+.filme-conteudo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+.filme-titulo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3.5rem;
+    color: white;
+    line-height: 1.1;
+    text-shadow: 0 0 20px rgba(0,255,255,0.3);
+    margin-bottom: 3rem;
+}
+
+.filme-titulo span {
+    color: #00eaff;
+    text-shadow: 0 0 25px rgba(0,234,255,0.5);
+}
+
+.filme-video {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    margin: 0 auto 3rem auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.2);
+    transition: all 0.4s ease; 
+}
+
+/* HOVER NO CONTAINER DO VÍDEO (IFRAME) */
+.filme-video:hover {
+    transform: translateY(-1px) scale(1.001); /* Leve elevação e pequeno zoom */
+    box-shadow: 0 15px 50px rgba(0, 255, 255, 0.5); /* Aumenta o brilho neon */
+    border: 0.1px solid #00ffff9c; /* Adiciona uma borda neon sutil */
+}
+
+.filme-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.frase-impacto {
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 200;
+    color: #fff;
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+    margin-top: 1rem;
+    animation: fadeInUp 2s ease;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .filme-titulo {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .filme-video {
+        max-width: 100%;
+    }
+
+    .btn-filme {
+        padding: 10px 28px;
+        font-size: 0.9rem;
+    }
+}
+
+
 /* --- SEÇÃO PORTFÓLIO (TRABALHOS FEITOS) --- */
 .portfolio {
     display: flex;
@@ -361,7 +483,7 @@ header {
 
 /* Efeito Interativo (Hover) */
 .project-card:hover {
-    transform: translateY(-10px); /* Elevação sutil */
+    transform: translateY(-4px); /* Elevação sutil */
     border-color: #00ffff;
     background: rgba(0, 240, 255, 0.05);
     box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2); /* Brilho neon */
@@ -425,6 +547,338 @@ header {
     transform: translateX(4px);
 }
 
+.pacotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 4rem 0;
+    padding: 0 5vw;
+}
+
+.pacotes-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.pacotes-header h2 {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 200;
+    font-size: 2.8rem;
+    color: white;
+    padding-bottom: 10px;
+}
+.pacotes-header p {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #999999;
+}
+
+/* --- AJUSTE NO PACCTES-CONTAINER (MAIOR ESPAÇO) --- */
+.pacotes-container {
+    width: 100%;
+    max-width: 1300px;
+    /* AUMENTO DO ESPAÇO: De 5rem para 6rem para um respiro maior */
+    margin-bottom: 6rem; 
+}
+
+
+.separator {
+    display: block;
+    width: 80%; 
+    max-width: 1000px;
+    height: 1px;
+    background: linear-gradient(to right, 
+        rgba(0, 255, 255, 0), 
+        #00eaff,            
+        rgba(0, 255, 255, 0));
+    margin: 4rem auto; 
+    opacity: 0.3; 
+}
+
+.pacotes-container h3 {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.pacotes-container .subtitle {
+    text-align: center;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 300;
+    color: #777777;
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+}
+
+.pacote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.pacote-card {
+    /* POSIÇÃO RELATIVA PARA A ANIMAÇÃO GLOW */
+    position: relative; 
+    overflow: hidden; 
+    /* Estilo Minimalista */
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(20, 20, 20, 1);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1; 
+}
+
+/* Efeito Glow que segue o Mouse (configurado pelo JavaScript) */
+.pacote-card::before {
+    content: '';
+    position: absolute;
+    /* Variáveis que serão atualizadas pelo JavaScript (mouse-glow.js) */
+    top: var(--glow-y, 50%); 
+    left: var(--glow-x, 50%);
+    width: 400%;
+    height: 400%;
+    background: radial-gradient(circle, rgba(0, 234, 255, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.pacote-card:hover {
+    transform: translateY(-5px);
+    /* Neon sutil no hover */
+    border-color: #00eaff; 
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.25);
+    background: rgba(0, 25, 30, 0.8);
+}
+
+.pacote-card:hover::before {
+    opacity: 1; /* Ativa o brilho no hover */
+}
+
+.pacote-card h4 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.9rem;
+    color: #00eaff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 234, 255, 0.2);
+}
+
+.pacote-card .pacote-descricao {
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 0.9rem;
+    color: #AAAAAA;
+    margin-bottom: 25px;
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pacote-card ul {
+    text-align: left;
+    margin: 10px 0 30px 0;
+    padding-left: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+.pacote-card ul li {
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 0.9rem;
+    color: #DDDDDD;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    display: flex;
+    align-items: center;
+}
+
+.pacote-card ul li:last-child {
+    border-bottom: none;
+}
+
+.pacote-card ul li i {
+    color: #00eaff;
+    margin-right: 12px;
+    font-size: 0.7rem;
+}
+
+/* ESTILO DO BOTÃO DE AÇÃO (HOVER REMOVIDO) */
+.pacote-card a.btn-hero-cta {
+    background-color: #00eaff;
+    color: #000000;
+    font-weight: 700;
+    padding: 12px 25px;
+    border-radius: 6px;
+    width: 80%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); /* Glow estático */
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pacotes-header h2 {
+        font-size: 2.5rem;
+    }
+    .pacote-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* --- SEÇÃO SOBRE (NOSSOS PILARES) --- */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 6rem 0; 
+    padding: 0 5vw;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.about-header h2 {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 200;
+    font-size: 2.5rem;
+    color: white;
+    padding-bottom: 10px;
+}
+
+/* --- SEÇÃO SOBRE: AJUSTES DE BRILHO E COR NO TÍTULO --- */
+
+.about-header h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 100;
+    font-size: 2.8rem; /* Levemente maior para mais impacto */
+    
+    /* COR E BRILHO NEON APLICADOS AO H2 */
+    color: #ffffff; /* Cor base ciano/neon */
+    text-shadow: 
+        0 0 10px rgba(254, 255, 255, 0.514), /* Brilho mais suave */
+        0 0 20px rgba(255, 255, 255, 0.171); /* Brilho mais forte */
+    
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* --- ESTILO PARA A NOVA INTRODUÇÃO DE HISTÓRIA/LOCALIZAÇÃO --- */
+.about-header .history-intro {
+    font-size: 1.25rem; /* Um pouco maior e mais destacado */
+    font-weight: 500; /* Mais peso */
+    
+    /* COR E BRILHO NEON APLICADOS À PRIMEIRA FRASE */
+    color: #ffffff; /* Branco com toque de ciano */
+
+    
+    margin-bottom: 0.5rem; 
+    padding-bottom: 0; 
+    max-width: 650px; /* Mais largura para respirar */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-header p {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #777777; /* O texto de suporte permanece discreto */
+}
+
+.about-header span {
+    color: #00eaff;
+    text-shadow: 0 0 25px rgba(0,234,255,0.5);
+}
+
+.about-grid {
+    display: grid;
+    /* Adapta-se automaticamente, mostrando 4 cards por linha em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.about-card {
+    background: rgba(10, 10, 10, 0.7); 
+    border: 1px solid rgba(20, 20, 20, 1);
+    border-radius: 10px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    border-color: #00eaff; 
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.25);
+}
+
+.about-card i {
+    font-size: 3rem;
+    color: #00eaff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 234, 255, 0.5); 
+}
+
+.about-card h3 {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.about-card p {
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 0.95rem;
+    color: #AAAAAA;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .about-grid {
+        /* Garante que o minmax funcione bem em telas grandes mas não forçe 4 colunas se a tela for menor que ~1000px */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .about-header h2 {
+        font-size: 2rem;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
 /* --- FOOTER (RODAPÉ) OTIMIZADO --- */
 footer {
     background-color: transparent; 
@@ -674,13 +1128,13 @@ footer p {
     }
 }
 
+/* Ajustes de Transição para evitar problemas com !important */
 .servico-card:hover, 
 .servico-card-cta:hover,
 .project-card:hover,
 .btn-hero-cta:hover,
 .icone-link:hover {
     transition: all 0.4s ease !important; 
-    transform: none; 
 }
 
 .servico-card:hover {
