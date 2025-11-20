@@ -851,6 +851,7 @@ footer {
     align-items: flex-start;
     flex-wrap: wrap; 
     border-top: 1px solid rgba(255, 255, 255, 0.1); 
+	gap: 1px;
 }
 
 /* Coluna 1: Informações de Contato */
@@ -863,7 +864,7 @@ footer {
 /* Coluna 2: Links Rápidos */
 .footer-links {
     flex: 0 0 auto;
-    margin-right: 30px;
+    margin-right: 35px;
 }
 
 .footer-links ul {
@@ -882,6 +883,31 @@ footer {
 }
 
 .footer-links ul li a:hover {
+    color: #00f0ff;
+}
+
+/* Coluna 3: Links Rápidos */
+.footer-parceiro {
+    flex: 0 0 auto;
+    margin-right: 30px;
+}
+
+.footer-parceiro ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-parceiro ul li {
+    margin-bottom: 8px;
+}
+
+.footer-parceiro ul li a {
+    color: #AAAAAA;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-parceiro ul li a:hover {
     color: #00f0ff;
 }
 
@@ -1016,7 +1042,7 @@ footer p {
 /* ========================================= */
 
 /* Tablet e Desktops Menores (Max-width: 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1179px) {
     /* HEADER */
     header {
         height: 5.5rem;
@@ -1049,13 +1075,7 @@ footer p {
         grid-template-columns: repeat(2, 1fr); 
         gap: 20px;
     }
-    
-    /* FOOTER RESPONSIVO */
-    .footer-links {
-        flex: 1 1 150px; 
-        margin-top: 20px;
-        margin-right: 0;
-    }
+
     
     .footer-social-cta {
         flex: 1 1 100%; 
@@ -1121,7 +1141,10 @@ footer p {
     .footer-main-wrapper {
         padding: 40px 5vw 30px;
         flex-direction: column; /* Força o empilhamento vertical */
-    }
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+	}
     
     .footer-info {
         flex: 1 1 100%;
@@ -1132,25 +1155,33 @@ footer p {
     }
     
     .footer-links {
-        flex: 1 1 100%;
         /* **AJUSTE: Centraliza o título e os links** */
         text-align: center; 
         margin-top: 0;
-        margin-bottom: 30px;
+		padding-left: 3rem;
+		margin-bottom: 30px;
     }
     .footer-links ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center; /* Centraliza a lista de links */
         gap: 15px; 
+
     }
+
+	.footer-parceiro{
+		text-align: center;
+		padding-left: 3rem;
+		margin-bottom: 30px;
+	}
     
     .footer-social-cta {
-        flex: 1 1 100%;
         /* **AJUSTE: Centraliza os elementos e o texto** */
         align-items: center; 
         text-align: center;
         margin-top: 0;
+		padding-left: 1rem;
+		margin-bottom: 30px;
     }
     
     .redes-sociais-icones {
